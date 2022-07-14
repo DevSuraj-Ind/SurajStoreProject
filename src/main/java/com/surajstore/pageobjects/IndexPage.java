@@ -19,17 +19,23 @@ public class IndexPage extends BaseClass {
 	LoginPage loginpage = new LoginPage(null);
 
 	@FindBy(css = ".login")
-	private WebElement logniBtn;
+	private WebElement SignInBtn;
 
 	@FindBy(id = "search_query_top")
 	private WebElement search;
+	
+	@FindBy(css = ".logo.img-responsive")
+	private WebElement logo;
+	
+	@FindBy(xpath="//a[text()='Contact us']")
+	private WebElement contactUsBtn;
 
 	public IndexPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
 	public LoginPage clickSignIn() {
-		logniBtn.click();
+		SignInBtn.click();
 		return loginpage;
 	}
 
